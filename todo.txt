@@ -1,0 +1,13 @@
+toDo:
+    DONE! fix the eye shift problem
+    isolate the enemy and hero in their own files
+    DONE! clouds
+    enemy ai (and fire-back)
+    maybe build a component that could be used by anything color-firing
+    charge code
+    waiting animations (blinking, etc...)
+    blast animation (bigger eyes)
+    DONE! enemyBlast bug fix (.destroy() method)
+    DONE! trees.
+    fix the enemy eye color problem
+    
