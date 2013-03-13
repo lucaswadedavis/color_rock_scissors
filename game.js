@@ -101,9 +101,9 @@ var enemyEye=new Crafty.e("EnemyEye,2D,DOM,Color,Tween,Collision")
         y:(enemy.y+20),
         w:20,
         h:20,
-        red:0,
-        green:255,
-        blue:255
+        red:25,
+        green:50,
+        blue:50
         })    
         .color('rgb(0,255,255)')
         .bind("EnterFrame",function(){
@@ -241,6 +241,14 @@ var hero=new Crafty.e("Hero, 2D, DOM, Color, Multiway, Collision")
         if (this.x<(bounds.left-this.w)){
             this.x=bounds.right;
             }
+
+            if (hero.red<0){hero.red=0}
+            if (hero.green<0){hero.green=0}
+            if (hero.blue<0){hero.blue=0}
+
+            if (hero.red>250){hero.red=250}
+            if (hero.green>250){hero.green=250}
+            if (hero.blue>250){hero.blue=250}
         })
     .bind('KeyDown',function(e){
         if (e.key===Crafty.keys['LEFT_ARROW']){
@@ -401,7 +409,6 @@ var charge=new Crafty.e("Charge, 2D, DOM, Color, Tween, Multiway, Collision")
                 hero.red+=1;
                 hero.green+=2;
                 hero.blue+=1;
-            
             })
         ;
           
@@ -499,6 +506,7 @@ var rightEye=new Crafty.e("RightEye, 2D, DOM, Color, Multiway, Collision")
     
  
 //Ball
+/*
 var ball=new Crafty.e("Ball, 2D, DOM, Color, Collision")
 	.color('rgb(255,0,0)')
 	.attr({ x: 300, y: 150, w: 10, h: 10, 
@@ -527,6 +535,8 @@ var ball=new Crafty.e("Ball, 2D, DOM, Color, Collision")
 	.onHit('Paddle', function () {
 	this.dX *= -1;
 });
+*/
+
 
 /*
 var menu=new Crafty.e("Menu,DOM,2D,Text,Color,Tween")
@@ -565,6 +575,11 @@ Crafty.e("Blackboard, DOM, 2D, Tween, Color, Text")
             this.tween({alpha:1},20);
             this.color('rgb(0,0,0)');
             }
+        else if (enemyEye.red<20 && enemyEye.green<20 && enemyEye.blue<20 && this.ready==true){
+            this.ready===false;
+            this.tween({alpha:1},20);
+            this.color('rgb(0,0,0)');
+            }
         });
     
 //Score boards
@@ -583,6 +598,12 @@ Crafty.e("Message, DOM, 2D, Tween, Color, Text")
             this.ready===false;
             this.tween({alpha:1},20);
             this.text("GAME OVER");
+            this.textColor('#ffffff');
+            }
+        else if (enemyEye.red<20 && enemyEye.green<20 && enemyEye.blue<20 && this.ready==true){
+            this.ready===false;
+            this.tween({alpha:1},20);
+            this.text("YOU WIN!");
             this.textColor('#ffffff');
             }
         });
