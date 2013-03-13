@@ -5,10 +5,10 @@ $(document).ready(function(){
 var game=function(){
     var bounds={};
 if (!window.innerWidth){
-    bounds={bottom:300,top:0,right:(screen.width-200),left:0};
+    bounds={bottom:(screen.height-200),top:0,right:(screen.width-200),left:0};
     }
 else{
-     bounds={bottom:window.innerHeight/2,top:0,right:window.innerWidth,left:0};
+     bounds={bottom:(window.innerHeight-200),top:0,right:window.innerWidth,left:0};
     }
 var protag={x:100 ,y:(bounds.bottom-40) ,h:40, w:40 };
 Crafty.init(bounds.right, bounds.bottom);
