@@ -1,4 +1,4 @@
-Color_rock_scissors
+#Color Rock Scissors
 
 is a crafty.js experiment that uses the paper-rock-scissors blueprint (but with colors instead) and adds the twist that the colors are in limited quantity and act as your health and mana.
 
